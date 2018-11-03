@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modify Supplier</title>
+</head>
+<link rel="stylesheet" type="text/css" href="supplyCss.css">
+<body>
+	<h1 class="header" id="header">Hyderabad Construction Limited&copy; </h1>
+	<h2 class="header" id="header">Modify Supplier</h2>
+<table class="headerTable">
+  <tr> 
+    <td width="63%"></td>
+    <td width="26%">Welcome</td>
+    <td width="11%"><a href="supplyLoginPage.html">Logout</a></td>
+  </tr>
+</table>
+	<form method="POST" >
+  <table class="">
+    <tr> 
+      <td ><div align="right"><font>Supplier Id</font></div></td>
+      <td >:</td>
+      <td > <select id="s_id" name="s_id" >
+      <option value="Select">Select Supplier</option>
+      </select>
+      <input type="button" name="search" id="search" value="Search">
+    </td>
+      <td></td>
+    </tr>
+    <tr > 
+      <td><div align="right"><font>Supplier Name</div></td>
+      <td>:</td>
+      <td><font><input name="s_name" id="s_name"type="text"></font></td>
+    </tr>
+   
+    <tr > 
+      <td><div align="right"><font>City</font></div></td>
+      <td>:</td>
+      <td><font size="1" ><input name="city_id" id="city_id" type="text">
+        select from list</font></td>
+    </tr>
+    <tr> 
+      <td><div align="right"><font>Expiry Date</font></div></td>
+      <td> :</td>
+      <td><font size="1" ><input name="s_Expire" id="s_Expire" type="date"></font></td>
+    </tr>
+      
+  </table>
+ 
+
+  <p><input type="submit" name="Submit" value="Save" id="Submit""> 
+   <input type="button" name="delete" value="Delete" id="delete"></p>
+  <p class="UED_p1"><a href="AdminSupply.html">Return to MainMenu</a></p>
+</form>
+<table class="footer">
+  <tr>
+    <td>&copy; ihGlobal Solutions 2005, All rights reserved.</td>
+  </tr>
+</table>
+</body>
+</html>
