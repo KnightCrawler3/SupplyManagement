@@ -21,11 +21,15 @@ listItem();
 $("#search").click(function(event){
 event.preventDefault();
     request=$.ajax({
-    url: "searchSupplier.php",//what to do after than 
+    url: "searchSupplier1.php",//what to do after than 
     method: "POST",
     data: $('form').serialize(),
     dataType: "json"
      });
+	  request.done(function(response) {
+	  $("#div2").html("<table><tr><th>product Name</th></tr><tr><td>$p_name</td></tr>");
+	  });
+	 
 	 
 });
 </script>
@@ -43,6 +47,7 @@ Choose the suppliers name</td><td>:</td><td><select id="s_id" class="s_id">
 </td>
 
 </form>
+<div id="div2">...</div>
 <table class="footer">
   <tr>
     <td>&copy; ihGlobal Solutions 2005, All rights reserved.</td>
