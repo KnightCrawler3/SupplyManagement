@@ -17,7 +17,10 @@ $(function(){
 	            request.done(function( response ) {
 								if(response=="ok"){
 								$("#spn1").html("working");
-									//window.location.replace("adminSupply.html");
+									window.location.replace("adminSupply.html");
+									}if(response=="ok1"){
+								$("#spn1").html("working");
+									window.location.replace("UserSupply.html");
 								}else{
 									$("#spn1").html(response);
 								}
