@@ -1,0 +1,54 @@
+<html>
+<title>loginpage</title>
+<head>
+<!--<link href="supplyCss.css" rel="stylesheet" type="text/css">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#btn1").click(function(event){
+		 event.preventDefault();
+		        request=$.ajax({
+	            url: "supplyLoginPage.php",
+	            method: "POST",
+	            data: $('form').serialize(),
+	            dataType: "text"
+	      });
+
+	            request.done(function( response ) {
+								if(response=="ok"){
+								$("#spn1").html("working");
+									//window.location.replace("adminSupply.html");
+								}else{
+									$("#spn1").html(response);
+								}
+	            });
+
+	            request.fail(function( jqXHR, textStatus ) {
+					     	$("#spn1").html("request fail");
+	            });
+	    });
+});
+</script>
+</head>
+<body>
+<h1 >"HYDERABAD CONSTRUCTIONS LIMITED" </h1>
+<h3>LOGIN DETAILS<span id="spn1" style="color: red;"></span></h3>
+<form>
+<tr>
+<td >User_Id</td>
+<td ><input type="text" name="id"></td><br>
+</tr>
+<td>Password</td>
+<input type="password" name="password"><br>
+<td> <div align="left"><input type="submit" name="Submit" id="btn1" value="Submit"></div></td>
+
+</form>
+
+<table class="footer">
+  <tr>
+    <td>&copy; ihGlobal Solutions 2005, All rights reserved.</td>
+  </tr>
+</table>
+</body>
+
+</html>
