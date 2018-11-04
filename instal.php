@@ -68,5 +68,12 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating admin: " . $conn->error;
 }
+$sql="insert into city (c_name)values('Bhopal'),('Jabalpur'),('Harda'),('Patna'),('Bhilai')";
+if ($conn->query($sql) === TRUE) {
+    echo " cities added successfully";
+} else {
+    echo "city adding unsuccessful " . $conn->error;
+}
+
 $conn->close();
 ?>
