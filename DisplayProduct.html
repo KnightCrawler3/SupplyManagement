@@ -1,0 +1,52 @@
+<html>
+<title>DisplayProduct</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function listItem(){
+event.preventDefault();
+    request=$.ajax({
+    url: "DisplayProduct.php",
+    method: "POST",
+    data: $('form').serialize(),
+    dataType: "json"
+     });
+	 request.done(function( response ) {     
+             $("#Select").html("<option>Select Supplier><br>"+response);//how to make it work 
+            });
+	request.fail(function( jqXHR, textStatus ) {
+          alert("Request failed: " + textStatus);
+            });
+			};
+listItem();
+$("#search").click(function(event){
+event.preventDefault();
+    request=$.ajax({
+    url: "searchSupplier.php",//what to do after than 
+    method: "POST",
+    data: $('form').serialize(),
+    dataType: "json"
+     });
+	 
+});
+</script>
+
+<h1 class="header" id="header">Hyderabad Construction Limited&copy; </h1>
+	<h3 class="header" id="header">user Panel</h2>
+
+<form>
+<table align = "center">
+<tr><td>
+Choose the suppliers name</td><td>:</td><td><select id="s_id" class="s_id">
+<option>Select Supplier</option>
+</select>
+<input type="button" id = "button" value = "search" name = "button">
+</td>
+
+</form>
+<table class="footer">
+  <tr>
+    <td>&copy; ihGlobal Solutions 2005, All rights reserved.</td>
+  </tr>
+</table>
+
+</html>
